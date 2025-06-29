@@ -1,0 +1,45 @@
+# Node modules (npm/yarn dependencies)
+node_modules/
+
+# Build output (for Vite, Webpack, etc.)
+dist/
+build/
+
+# Tailwind cache
+.tailwind-cache/
+
+# Logs
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+
+# Environment files
+.env
+.env.local
+.env.*.local
+
+# macOS system files
+.DS_Store
+
+# VSCode settings
+.vscode/
+
+# Optional: if you're using Next.js
+.next/
+
+# Optional: if you're using SvelteKit
+.svelte-kit/
+
+# Optional: if using Nuxt
+.nuxt/
+
+# Optional: if using Astro
+.astro/
+
+# Optional: if using Laravel Mix
+public/css/
+public/js/
+
+# Optional: coverage reports
+coverage/

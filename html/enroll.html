@@ -1,0 +1,1055 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Online Degrees</title>
+    <link href="../src/output.css" rel="stylesheet" />
+  </head>
+  <body class="dark:bg-dark-background">
+    <div
+      id="bgOver"
+      onclick="closeBgOpa()"
+      style="display: none"
+      class="z-10 absolute inset-0 bg-black opacity-20"
+    ></div>
+    <div
+      id="search-bg"
+      style="display: none"
+      class="fixed inset-0 z-50 flex justify-center items-center"
+    >
+      <div
+        onclick="closeBgOpa()"
+        class="absolute inset-0 bg-black opacity-20"
+      ></div>
+
+      <div
+        class="relative z-10 bg-white w-full m-auto mt-50 max-w-sm px-6 py-4 rounded-xl shadow-lg flex items-center space-x-2"
+      >
+        <input
+          type="text"
+          placeholder="Search..."
+          class="flex-grow px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+        <button
+          class="bg-primary cursor-pointer text-white px-4 py-2 rounded-md hover:bg-variant_primary"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <header
+      class="dark:bg-dark-bg bg-blue relative border-b border-primary py-2 dark:border-variant-text-black"
+    >
+      <nav
+        class="container flex flex-row items-center justify-between m-auto px-4 sm:px-0"
+      >
+        <div
+          class="sm:hidden mr-[5px] w-[50px] ml-[5px] h-[35px] flex items-center"
+        >
+          <input type="checkbox" id="menu-toggle" class="peer hidden" />
+          <button onclick="toggleSidebar()" class="cursor-pointer">
+            <i class="fa-solid fa-bars text-xl text-primary"></i>
+          </button>
+        </div>
+        <a href="index.html">
+          <img
+            src="../img/learnfinity.png"
+            class="w-13 sm:w-15 rounded-4xl m-auto sm:m-0"
+            alt=""
+          />
+        </a>
+
+        <a
+          class="hidden dark:hover:bg-variant-primary sm:flex justify-center items-center text-[13px] mx-[7px] w-[70px] h-[35px] bg-primary text-white rounded-[10px] hover:bg-variant-secondary-primary duration-300"
+          href="enroll.html"
+        >
+          Enroll <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <div class="hidden sm:block w-[45%] h-[40px] relative content-center">
+          <input
+            type="text"
+            placeholder="Search Courses"
+            class="pl-10 pr-4 py-2 bg-[#eaedf0] border-[#eaedf0] dark:bg-variant-text-black dark:text-gray-400 text-variant-text-black rounded-[10px] w-full focus:outline-none"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+          ></i>
+        </div>
+        <div class="flex items-center">
+          <a
+            class="hidden dark:hover:bg-variant-primary mx-[5px] dark:text-white sm:flex justify-center items-center text-[13px] px-1 hover:bg-variant-secondary-primary duration-300 text-center hover:text-white rounded-[10px] h-[40px]"
+            href="teach.html"
+            >Teach on learnfinity</a
+          >
+          <a
+            class="dark:bg-variant-text-black dark:text-white hidden sm:flex items-center justify-center text-[13px] mx-[5px] w-[70px] h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary border border-primary rounded-[10px]"
+            href="login.html"
+            >Log in</a
+          >
+
+          <a
+            class="hidden sm:flex items-center justify-center text-[13px] mx-[5px] w-[70px] h-[35px] bg-primary hover:bg-variant-primary duration-300 text-white border border-primary rounded-[10px]"
+            href="signup.html"
+          >
+            Sign up
+          </a>
+          <!-- search -->
+          <button
+            onclick="toggleSearch()"
+            id="responsive-search"
+            class="dark:bg-dark-bg dark:text-white cursor-pointer sm:hidden block mx-2 sm:w-[50px] sm:ml-[5px] sm:h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary border-primary rounded-[10px]"
+          >
+            <i class="fa-solid fa-magnifying-glass text-gray-"></i>
+          </button>
+          <button
+            class="dark:bg-variant-text-black dark:text-white hidden sm:block w-[50px] ml-[5px] h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary sm:border border-primary rounded-[10px]"
+          >
+            <i class="fa-solid fa-earth-americas"></i>
+          </button>
+        </div>
+
+        <!-- sidebar -->
+        <div
+          id="mobile-sidebar"
+          class="sm:hidden fixed top-0 left-[-280px] h-full w-64 bg-white dark:bg-dark-bg shadow-lg z-40 duration-300"
+        >
+          <div
+            class="p-4 border-b border-gray-200 flex justify-between items-center"
+          >
+            <img
+              src="../img/learnfinity.png"
+              alt="Logo"
+              class="w-14 rounded-xl"
+            />
+            <button
+              onclick="toggleCloseSidebar()"
+              class="text-primary text-xl dark:text-white"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <nav class="flex flex-col p-4 gap-4 text-[15px]">
+            <a
+              href="index.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Home</a
+            >
+            <a
+              href="teach.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Teach on Learnfinity</a
+            >
+            <a
+              href="enroll.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Enroll</a
+            >
+            <a
+              href="login.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Log In</a
+            >
+            <a
+              href="signup.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Sign Up</a
+            >
+            <button
+              class="w-full flex items-center justify-center gap-2 py-2 border border-primary rounded-[10px] text-primary hover:bg-primary hover:text-white duration-200"
+            >
+              <i class="fa-solid fa-earth-americas"></i> Language
+            </button>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <main>
+      <section>
+        <section
+          class="bg-primary dark:bg-dark-card text-white py-4 text-lg font-kt"
+        >
+          <!-- Header -->
+
+          <div class="gap-2 sm:gap-12 px-4 container m-auto dark:text-gray-300">
+            <div>
+              <span class="underline">Browse</span>
+              <i class="fa-solid fa-arrow-right px-5"></i>
+              <span>E Learning</span>
+            </div>
+            <h1 class="text-4xl underline my-5 font-bold">
+              E-Learning Courses Online
+            </h1>
+            <p class="mb-4">
+              Explore e-learning principles for online education. Learn to
+              design and deliver <br />
+              effective digital learning experiences.
+            </p>
+          </div>
+        </section>
+        <section class="container m-auto">
+          <div class="pt-6 text-black">
+            <div
+              class="max-w-7xl mx-auto grid grid-cols-1 md:grid-cols-4 gap-6"
+            >
+              <!-- Sidebar Filters -->
+              <aside
+                class="md:col-span-1 bg-white dark:bg-dark-card dark:text-gray-300 rounded-lg px-4"
+              >
+                <h2 class="text-xl font-bold mb-4 underline">Filter by</h2>
+
+                <!-- Subject Filter -->
+                <div class="mb-6">
+                  <h3 class="font-semibold mb-2 underline">Subject</h3>
+                  <ul class="space-y-1 text-sm">
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" checked />Computer
+                        Science</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          type="checkbox"
+                          class="mr-2"
+                          checked
+                        />Information Technology</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Data
+                        Science</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Business</label
+                      >
+                    </li>
+                    <li>
+                      <a href="#" class="text-blue-500 text-xs hover:underline"
+                        >Show more</a
+                      >
+                    </li>
+                  </ul>
+                </div>
+
+                <!-- Learning Product -->
+                <div>
+                  <h3 class="font-semibold mb-2 underline">Learning Product</h3>
+                  <ul class="space-y-1 text-sm">
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Guide
+                        Project</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Projects</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input
+                          type="checkbox"
+                          class="mr-2"
+                        />Professional</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Degree</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />Graduate
+                        Certificates</label
+                      >
+                    </li>
+                    <li>
+                      <label
+                        ><input type="checkbox" class="mr-2" />MasterTrack
+                        Certificates</label
+                      >
+                    </li>
+                  </ul>
+                </div>
+              </aside>
+
+              <!-- Course Grid -->
+              <main class="md:col-span-3 px-4">
+                <h2 class="text-2xl font-bold mb-6 font-kt dark:text-gray-300">
+                  Explore the E-Learning Course Catalog
+                </h2>
+                <div class="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+                  <!-- card 1 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://d3g5ywftkpzr0e.cloudfront.net/wp-content/uploads/2023/07/13220529/Artificial-Intelligence-in-Indonesia-The-current-state-and-its-opportunities.jpeg"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[10px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      Complete A.I. & Machine Learning, Data Science Bootcamp
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="text-black font-bold dark:text-gray-300"
+                        >Skills you’ll gain: </span
+                      >Collaborative Software, Education Software and
+                      Technology, User AccountsCollaborative Software, Education
+                      Software and Technology, User AccountsCollaborative
+                      Software, Education Software and Technology, User Accounts
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.6
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(412,405)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Beginner · Guided Project · Less Than 24 Hours
+                      </p>
+                    </div>
+                  </div>
+                  <!-- card 2 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://365datascience.com/resources/blog/2017-11-Programming-in-900-words-min.png"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[10px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      Python for Everybody
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="dark:text-gray-300 text-black font-bold"
+                        >Skills you’ll gain: </span
+                      >Web Scraping, Data Processing, Relational Databases,
+                      JSON, Database Design, SQL, Network Protocols, Web
+                      Services, Restful API, Data Modeling, Programming
+                      Principles, Application Programming Interface (API), Data
+                      Structures, Data Collection, Data Visualization Software,
+                      Data Manipulation, Computer Programming, Python
+                      Programming, Data Import/Export, Software Installation
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.8
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(212,405)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Beginner · Specialization ·3 - 6 months
+                      </p>
+                    </div>
+                  </div>
+                  <!-- card 3 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://miro.medium.com/v2/resize:fit:870/1*ZVi3vmxlPZpUngKXRS18oQ.jpeg"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[20px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      Crash Course On Python
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="dark:text-gray-300 text-black font-bold"
+                        >Skills you’ll gain: </span
+                      >Programming Principles, Python Programming, Computer
+                      Programming, Computational Thinking, Algorithms, Problem
+                      Management, Data Structures, Integrated Development
+                      Environments, Debugging, Development Environment
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.8
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(39,405)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Beginner · Course ·1 - 3 months
+                      </p>
+                    </div>
+                  </div>
+                  <!-- card 4 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://sushantuniversity.edu.in/blog/wp-content/uploads/2022/05/aiml003-1024x640.jpg"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[20px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      Machine learnign for all
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="dark:text-gray-300 text-black font-bold"
+                        >Skills you’ll gain: </span
+                      >Feature Engineering, Machine Learning, Data Processing,
+                      Artificial Intelligence, Supervised Learning, Data
+                      Analysis, Computer Vision, Data Collection
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.7
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(3,405)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Beginner · Course ·1 - 4 weeks
+                      </p>
+                    </div>
+                  </div>
+                  <!-- card 5 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://daxg39y63pxwu.cloudfront.net/images/blog/aws-cloud-practitioner-certification/Amazon_Cloud_Practitioner_Certification.png"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[20px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      AWS Cloud Solutions Architect
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="dark:text-gray-300 text-black font-bold"
+                        >Skills you’ll gain: </span
+                      >Feature Engineering, Machine Learning, Data Processing,
+                      Artificial Intelligence, Supervised Learning, Data
+                      Analysis, Computer Vision, Data Collection
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.8
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(6,705)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Intermediate · Professional Certificate · 3 - 6 months
+                      </p>
+                    </div>
+                  </div>
+                  <!-- card 6 -->
+                  <div
+                    class="bg-white dark:bg-dark-card shadow-sm border-0 rounded-lg p-4 flex flex-col justify-between h-80"
+                  >
+                    <img
+                      src="https://growingtechno.com/wp-content/uploads/2023/10/Google-Cloud-Platform.webp"
+                      alt="Course"
+                      class="w-full h-28 object-contain mb-2 rounded-[20px]"
+                    />
+                    <h3
+                      class="dark:text-gray-300 font-semibold text-sm mb-1 underline line-clamp-2"
+                    >
+                      Google Cloud Datbase Engineer
+                    </h3>
+                    <p
+                      class="text-xs text-variant-text-black line-clamp-3 mt-2"
+                    >
+                      <span class="dark:text-gray-300 text-black font-bold"
+                        >Skills you’ll gain: </span
+                      >Google Cloud Platform, Cloud Infrastructure, Application
+                      Deployment, Prompt Engineering, Kubernetes,
+                      Containerization, Database Architecture and
+                      Administration, MySQL, Cloud Computing Architecture,
+                      PostgreSQL, Identity and Access Management, Cloud Storage,
+                      Data Migration, Cloud Services, Database Administration,
+                      Cloud Management, Virtual Machines, Cloud Security, Cloud
+                      Applications, Operational Databases
+                    </p>
+                    <div class="mt-auto">
+                      <p class="text-secondary-primary text-sm mt-2">
+                        4.7
+                        <i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star"></i
+                        ><i class="fa-solid fa-star-half"></i>
+                        <span class="text-gray-400 font-bold text-xs"
+                          >(49,505)</span
+                        >
+                      </p>
+                      <p class="text-xs text-gray-500 mt-2">
+                        Intermediate · Specialization · 3 - 6 months
+                      </p>
+                    </div>
+                  </div>
+                </div>
+              </main>
+            </div>
+          </div>
+        </section>
+      </section>
+      <br />
+      <br />
+      <section>
+        <!-- Header -->
+        <div
+          class="h-[100px] bg-primary dark:bg-dark-card dark:text-gray-300 text-white text-center py-4 text-2xl font-bold underline flex items-center justify-center"
+        >
+          Take your career to the next level with an online degree
+        </div>
+
+        <div class="container m-auto dark:text-gray-300">
+          <!-- Filter by -->
+          <div
+            class="cotnainer m-auto flex flex-wrap gap-2 sm:gap-12 px-4 py-6 items-center"
+          >
+            <div class="font-semibold">Filter by</div>
+            <select
+              class="cursor-pointer border-0 rounded px-3 py-2 w-full md:w-auto"
+            >
+              <option>Program Level</option>
+            </select>
+            <select
+              class="cursor-pointer border-0 rounded px-3 py-2 w-full md:w-auto"
+            >
+              <option>Subject</option>
+            </select>
+          </div>
+
+          <!-- Grid -->
+          <div
+            class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6 px-4 pb-8"
+          >
+            <!-- Card 1-->
+            <div
+              class="flex flex-col dark:bg-dark-card justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://mastertube.com/themes/mastertube/logos/008cbdaa841a00d953469173f91a7ab71721832976.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">
+                University of Illinois Urbana-Champaign
+              </p>
+              <h3 class="font-semibold mt-1">
+                Master of Business Administration
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                #12 in Top Public Universities in the U.S. (U.S. News & World
+                Report, 2023)
+              </p>
+              <p class="text-xs mt-2">Application due: August 1, 2025</p>
+            </div>
+
+            <!-- Card 2-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://tils.edu.pk/wp-content/uploads/2020/06/RecognisedTeachingcenter.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of London</p>
+              <h3 class="font-semibold mt-1">
+                Bachelor of Science in Computer Science
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Specialise in ML and AI, data science, web and mobile
+                development, physical computing and IoT, game development, VR,
+                or UX
+              </p>
+              <p class="text-xs mt-auto">Application due September 8, 2025</p>
+            </div>
+
+            <!-- Card 3-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://seattletransferfairs.weebly.com/uploads/2/1/5/0/21501250/editor/university-of-pittsburgh-logo-rgb-primary-3-color.png?1611334745"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of Pittsburgh</p>
+              <h3 class="font-semibold mt-1">Master of Data Science</h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                A highly-ranked, Carnegie R1 public research institution
+              </p>
+              <p class="text-xs mt-auto">Application due: August 8, 2025</p>
+            </div>
+
+            <!-- Card 4-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://biotalent-ca.s3.us-east-2.amazonaws.com/media/public/uploads/2021/11/02/Northeasten-University-Logo-Partner-Cropped.png"
+                alt="Northeastern University"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">Northeastern University</p>
+              <h3 class="font-semibold mt-1">
+                Master of Science in Data Analytics Engineering
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Ranked in the top 40 of the U.S. News Best Graduate Schools in
+                Engineering
+              </p>
+              <p class="text-xs mt-auto">Application due: July 25, 2025</p>
+            </div>
+
+            <!-- Card 5-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://biotalent-ca.s3.us-east-2.amazonaws.com/media/public/uploads/2021/11/02/Northeasten-University-Logo-Partner-Cropped.png"
+                alt="Northeastern University"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">Northeastern University</p>
+              <h3 class="font-semibold mt-1">
+                Master of Science in Data Analytics Engineering
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Ranked in the top 40 of the U.S. News Best Graduate Schools in
+                Engineering
+              </p>
+              <p class="text-xs mt-2">Application due: July 25, 2025</p>
+            </div>
+
+            <!-- Card 6-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://seattletransferfairs.weebly.com/uploads/2/1/5/0/21501250/editor/university-of-pittsburgh-logo-rgb-primary-3-color.png?1611334745"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of Pittsburgh</p>
+              <h3 class="font-semibold mt-1">Master of Data Science</h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                A highly-ranked, Carnegie R1 public research institution
+              </p>
+              <p class="text-xs mt-2">Application due: August 8, 2025</p>
+            </div>
+
+            <!-- Card 7-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://tils.edu.pk/wp-content/uploads/2020/06/RecognisedTeachingcenter.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of London</p>
+              <h3 class="font-semibold mt-1">
+                Bachelor of Science in Computer Science
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Specialise in ML and AI, data science, web and mobile
+                development, physical computing and IoT, game development, VR,
+                or UX
+              </p>
+              <p class="text-xs mt-2">Application due September 8, 2025</p>
+            </div>
+
+            <!-- Card 8-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://mastertube.com/themes/mastertube/logos/008cbdaa841a00d953469173f91a7ab71721832976.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">
+                University of Illinois Urbana-Champaign
+              </p>
+              <h3 class="font-semibold mt-1">
+                Master of Business Administration
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                #12 in Top Public Universities in the U.S. (U.S. News & World
+                Report, 2023)
+              </p>
+              <p class="text-xs mt-2">Application due: August 1, 2025</p>
+            </div>
+
+            <!-- Card 1-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://mastertube.com/themes/mastertube/logos/008cbdaa841a00d953469173f91a7ab71721832976.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">
+                University of Illinois Urbana-Champaign
+              </p>
+              <h3 class="font-semibold mt-1">
+                Master of Business Administration
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                #12 in Top Public Universities in the U.S. (U.S. News & World
+                Report, 2023)
+              </p>
+              <p class="text-xs mt-2">Application due: August 1, 2025</p>
+            </div>
+
+            <!-- Card 2-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://tils.edu.pk/wp-content/uploads/2020/06/RecognisedTeachingcenter.png"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of London</p>
+              <h3 class="font-semibold mt-1">
+                Bachelor of Science in Computer Science
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Specialise in ML and AI, data science, web and mobile
+                development, physical computing and IoT, game development, VR,
+                or UX
+              </p>
+              <p class="text-xs mt-2">Application due September 8, 2025</p>
+            </div>
+
+            <!-- Card 3-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://seattletransferfairs.weebly.com/uploads/2/1/5/0/21501250/editor/university-of-pittsburgh-logo-rgb-primary-3-color.png?1611334745"
+                alt="Gies College of Business"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">University of Pittsburgh</p>
+              <h3 class="font-semibold mt-1">Master of Data Science</h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                A highly-ranked, Carnegie R1 public research institution
+              </p>
+              <p class="text-xs mt-2">Application due: August 8, 2025</p>
+            </div>
+
+            <!-- Card 4-->
+            <div
+              class="dark:bg-dark-card flex flex-col justify-between bg-white border-0 rounded-lg shadow p-4 text-left"
+            >
+              <img
+                src="https://biotalent-ca.s3.us-east-2.amazonaws.com/media/public/uploads/2021/11/02/Northeasten-University-Logo-Partner-Cropped.png"
+                alt="Northeastern University"
+                class="mx-auto h-10 mb-2"
+              />
+              <p class="text-sm text-gray-600">Northeastern University</p>
+              <h3 class="font-semibold mt-1">
+                Master of Science in Data Analytics Engineering
+              </h3>
+
+              <p class="line-clamp-3 text-xs text-gray-500 mt-2">
+                Ranked in the top 40 of the U.S. News Best Graduate Schools in
+                Engineering
+              </p>
+              <p class="text-xs mt-2">Application due: July 25, 2025</p>
+            </div>
+          </div>
+        </div>
+      </section>
+      <section>
+        <div class="container m-auto px-3 mb-10">
+          <h3
+            class="underline text-2xl font-bold text-primary mb-10 dark:text-gray-300"
+          >
+            Learn from expert faculty
+          </h3>
+          <div class="grid sm:grid-cols-2 gap-5">
+            <!-- card 1 -->
+            <div
+              class="border-primary border rounded-2xl p-5 dark:bg-dark-card"
+            >
+              <div class="flex items-center gap-5">
+                <div class="border border-primary rounded-2xl p-2">
+                  <img
+                    class="w-10 rounded-4xl"
+                    src="https://z-p3-scontent.fpnh5-4.fna.fbcdn.net/v/t39.30808-6/468854725_575285908585247_2028952310093361434_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGB0qm8RnQdzgF9_cbbYBl2hI7aQ8RbmrmEjtpDxFuauTTCnPx88TOTjJccqUdXcgpg7nIWhcU65ZnUgAJbkW9D&_nc_ohc=AakhRa-S5kYQ7kNvwFIn4SO&_nc_oc=AdkB9ZPAwXEF2xfcqkry0vT4pQc9bBnuUAqPRIK1jlwt8CUgDwEsrmR9S28miAnyVIA&_nc_zt=23&_nc_ht=z-p3-scontent.fpnh5-4.fna&_nc_gid=Pat5f6uGPid6C3edPMHswQ&oh=00_AfOWJKU342Sf71Z8aAC-0EoRPsGhWSQrSXRyQY2TTkTu2Q&oe=6866A8F4"
+                    alt="school"
+                  />
+                </div>
+
+                <p
+                  class="font-bold font-kt text-2xl text-primary dark:text-gray-300"
+                >
+                  ISTAD CAMBODIA
+                </p>
+              </div>
+              <p class="dark:text-gray-300 py-5 font-bold text-2xl">
+                Mastering Web-design from today!
+              </p>
+              <div class="flex items-center gap-10">
+                <img
+                  class="w-15 rounded-4xl shadow-2xl"
+                  src="../img/teacher1.jpg"
+                  alt="teacher"
+                />
+                <div>
+                  <p class="dark:text-gray-300">Eung Lyzhia</p>
+                  <p class="text-variant-text-black">Lecturer of ISTAD</p>
+                </div>
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div
+              class="border-primary border rounded-2xl p-5 dark:bg-dark-card"
+            >
+              <div class="flex items-center gap-5">
+                <div class="border border-primary rounded-2xl p-2">
+                  <img
+                    class="w-10 rounded-4xl"
+                    src="https://z-p3-scontent.fpnh5-4.fna.fbcdn.net/v/t39.30808-6/468854725_575285908585247_2028952310093361434_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGB0qm8RnQdzgF9_cbbYBl2hI7aQ8RbmrmEjtpDxFuauTTCnPx88TOTjJccqUdXcgpg7nIWhcU65ZnUgAJbkW9D&_nc_ohc=AakhRa-S5kYQ7kNvwFIn4SO&_nc_oc=AdkB9ZPAwXEF2xfcqkry0vT4pQc9bBnuUAqPRIK1jlwt8CUgDwEsrmR9S28miAnyVIA&_nc_zt=23&_nc_ht=z-p3-scontent.fpnh5-4.fna&_nc_gid=Pat5f6uGPid6C3edPMHswQ&oh=00_AfOWJKU342Sf71Z8aAC-0EoRPsGhWSQrSXRyQY2TTkTu2Q&oe=6866A8F4"
+                    alt="school"
+                  />
+                </div>
+
+                <p
+                  class="font-bold font-kt text-2xl text-primary dark:text-gray-300"
+                >
+                  ISTAD CAMBODIA
+                </p>
+              </div>
+              <p class="dark:text-gray-300 py-5 font-bold text-2xl">
+                Mastering Java-Springboot from today!
+              </p>
+              <div class="flex items-center gap-10">
+                <img
+                  class="w-15 rounded-4xl shadow-2xl"
+                  src="../img/teacher2.jpg"
+                  alt="teacher"
+                />
+                <div>
+                  <p class="dark:text-gray-300">Sreng Chipor</p>
+                  <p class="text-variant-text-black">Lecturer of ISTAD</p>
+                </div>
+              </div>
+            </div>
+            <!-- card 2 -->
+            <div
+              class="border-primary border rounded-2xl p-5 dark:bg-dark-card"
+            >
+              <div class="flex items-center gap-5">
+                <div class="border border-primary rounded-2xl p-2">
+                  <img
+                    class="w-10 rounded-4xl"
+                    src="https://z-p3-scontent.fpnh5-4.fna.fbcdn.net/v/t39.30808-6/468854725_575285908585247_2028952310093361434_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGB0qm8RnQdzgF9_cbbYBl2hI7aQ8RbmrmEjtpDxFuauTTCnPx88TOTjJccqUdXcgpg7nIWhcU65ZnUgAJbkW9D&_nc_ohc=AakhRa-S5kYQ7kNvwFIn4SO&_nc_oc=AdkB9ZPAwXEF2xfcqkry0vT4pQc9bBnuUAqPRIK1jlwt8CUgDwEsrmR9S28miAnyVIA&_nc_zt=23&_nc_ht=z-p3-scontent.fpnh5-4.fna&_nc_gid=Pat5f6uGPid6C3edPMHswQ&oh=00_AfOWJKU342Sf71Z8aAC-0EoRPsGhWSQrSXRyQY2TTkTu2Q&oe=6866A8F4"
+                    alt="school"
+                  />
+                </div>
+
+                <p
+                  class="font-bold font-kt text-2xl text-primary dark:text-gray-300"
+                >
+                  ISTAD CAMBODIA
+                </p>
+              </div>
+              <p class="dark:text-gray-300 py-5 font-bold text-2xl">
+                Mastering UX/UI from today!
+              </p>
+              <div class="flex items-center gap-10">
+                <img
+                  class="w-15 rounded-4xl shadow-2xl"
+                  src="../img/teacher3.jpg"
+                  alt="teacher"
+                />
+                <div>
+                  <p class="dark:text-gray-300">Ing Davann</p>
+                  <p class="text-variant-text-black">Lecturer of ISTAD</p>
+                </div>
+              </div>
+            </div>
+            <!-- card 3 -->
+            <div
+              class="border-primary border rounded-2xl p-5 dark:bg-dark-card"
+            >
+              <div class="flex items-center gap-5">
+                <div class="border border-primary rounded-2xl p-2">
+                  <img
+                    class="w-10 rounded-4xl"
+                    src="https://z-p3-scontent.fpnh5-4.fna.fbcdn.net/v/t39.30808-6/468854725_575285908585247_2028952310093361434_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=6ee11a&_nc_eui2=AeGB0qm8RnQdzgF9_cbbYBl2hI7aQ8RbmrmEjtpDxFuauTTCnPx88TOTjJccqUdXcgpg7nIWhcU65ZnUgAJbkW9D&_nc_ohc=AakhRa-S5kYQ7kNvwFIn4SO&_nc_oc=AdkB9ZPAwXEF2xfcqkry0vT4pQc9bBnuUAqPRIK1jlwt8CUgDwEsrmR9S28miAnyVIA&_nc_zt=23&_nc_ht=z-p3-scontent.fpnh5-4.fna&_nc_gid=Pat5f6uGPid6C3edPMHswQ&oh=00_AfOWJKU342Sf71Z8aAC-0EoRPsGhWSQrSXRyQY2TTkTu2Q&oe=6866A8F4"
+                    alt="school"
+                  />
+                </div>
+
+                <p
+                  class="font-bold font-kt text-2xl text-primary dark:text-gray-300"
+                >
+                  ISTAD CAMBODIA
+                </p>
+              </div>
+              <p class="dark:text-gray-300 py-5 font-bold text-2xl">
+                Mastering Web-Beckend from today!
+              </p>
+              <div class="flex items-center gap-10">
+                <img
+                  class="w-15 rounded-4xl shadow-2xl"
+                  src="../img/teacher1.jpg"
+                  alt="teacher"
+                />
+                <div>
+                  <p class="dark:text-gray-300">Sreng Chipor</p>
+                  <p class="text-variant-text-black">Lecturer of ISTAD</p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+    </main>
+    <footer class="text-white py-5 pt-10 px-4 bg-primary dark:dark:bg-dark-bg">
+      <div
+        class="max-w-6xl items-start mx-auto flex flex-col md:flex-row justify-between items-center gap-6 sm:container"
+      >
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img
+            src="../img/learnfinity.png"
+            alt="Learnfinity Logo"
+            class="w-20 sm:w-28 rounded-[50%] mt-5"
+          />
+        </div>
+
+        <address class="not-italic text-sm leading-relaxed">
+          <h2 class="text-lg font-kt mb-2 underline font-bold">Contact</h2>
+          <p>
+            No. 24, Street 562,<br />
+            Sangkat Boeung Kak I,<br />
+            Khan Toul Kork, Phnom Penh, Cambodia
+          </p>
+          <p class="mt-2">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+855919191919" class="hover:underline"
+              >+855 91 919 1919</a
+            >
+          </p>
+          <p>
+            <i class="fa-solid fa-envelopes-bulk"></i>
+            <a href="mailto:learnfinity@gmail.com" class="hover:underline"
+              >learnfinity@gmail.com</a
+            >
+          </p>
+        </address>
+
+        <nav aria-label="Discover">
+          <h2 class="text-lg font-bold mb-2 underline">Discover</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Get the app</a></li>
+            <li>
+              <a href="#" class="hover:underline">Teach On LeanFinity</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Plans And Pricing</a>
+            </li>
+            <li><a href="#" class="hover:underline">Affiliate</a></li>
+            <li><a href="#" class="hover:underline">Help and Supports</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Program">
+          <h2 class="text-lg font-bold mb-2 underline">Program</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Diploma Degree</a></li>
+            <li>
+              <a href="#" class="hover:underline">BS Degree</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Beginner</a>
+            </li>
+            <li><a href="#" class="hover:underline">Intermediate</a></li>
+            <li><a href="#" class="hover:underline">Difficulty</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="mt-10" />
+      <p class="text-center font-kt mt-5">@2025 LearnFinity</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/d9a2442d2e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/script.js"></script>
+  </body>
+</html>

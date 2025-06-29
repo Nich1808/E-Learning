@@ -1,0 +1,16 @@
+@import url("https://fonts.googleapis.com/css2?family=Kantumruy+Pro:ital,wght@0,100..700;1,100..700&display=swap");
+@import "tailwindcss";
+
+@theme {
+  --font-kt: "Kantumruy Pro", sans-serif;
+  --color-primary: #004aad;
+  --color-variant-primary: #005ad3;
+  --color-secondary-primary: #f8b514;
+  --color-variant-secondary-primary: #fbd566;
+  --color-background: #f5f7f9;
+  --color-variant-text-black: #595959;
+
+  --color-dark-bg: #171924;
+  --color-dark-background: #1e1f2a;
+  --color-dark-card: #0d171f;
+}

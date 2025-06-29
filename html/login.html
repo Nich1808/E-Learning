@@ -1,0 +1,325 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Login-LearnFinity</title>
+    <link rel="stylesheet" href="../src/output.css" />
+  </head>
+  <style>
+    .cssline {
+      height: 0.9px;
+      flex-grow: 1;
+      background-color: rgb(202, 202, 202);
+    }
+  </style>
+  <body class="bg-white dark:bg-dark-background">
+    <!-- Search Responsive -->
+    <div
+      id="bgOver"
+      onclick="closeBgOpa()"
+      style="display: none"
+      class="z-10 absolute inset-0 bg-black opacity-20"
+    ></div>
+    <div
+      id="search-bg"
+      style="display: none"
+      class="fixed inset-0 z-50 flex justify-center items-center"
+    >
+      <div
+        onclick="closeBgOpa()"
+        class="absolute inset-0 bg-black opacity-20"
+      ></div>
+
+      <div
+        class="relative z-10 bg-white w-full m-auto mt-50 max-w-sm px-6 py-4 rounded-xl shadow-lg flex items-center space-x-2"
+      >
+        <input
+          type="text"
+          placeholder="Search..."
+          class="flex-grow px-4 py-2 rounded-md border border-gray-300 focus:outline-none focus:ring-2 focus:ring-primary"
+        />
+        <button
+          class="bg-primary cursor-pointer text-white px-4 py-2 rounded-md hover:bg-variant_primary"
+        >
+          Search
+        </button>
+      </div>
+    </div>
+
+    <header
+      class="dark:bg-dark-bg bg-blue relative border-b border-primary py-2 dark:border-variant-text-black"
+    >
+      <nav
+        class="container flex flex-row items-center justify-between m-auto px-4 sm:px-0"
+      >
+        <div
+          class="sm:hidden mr-[5px] w-[50px] ml-[5px] h-[35px] flex items-center"
+        >
+          <input type="checkbox" id="menu-toggle" class="peer hidden" />
+          <button onclick="toggleSidebar()" class="cursor-pointer">
+            <i class="fa-solid fa-bars text-xl text-primary"></i>
+          </button>
+        </div>
+        <a href="index.html">
+          <img
+            src="../img/learnfinity.png"
+            class="w-13 sm:w-15 rounded-4xl m-auto sm:m-0"
+            alt=""
+          />
+        </a>
+
+        <a
+          class="hidden dark:hover:bg-variant-primary sm:flex justify-center items-center text-[13px] mx-[7px] w-[70px] h-[35px] bg-primary text-white rounded-[10px] hover:bg-variant-secondary-primary duration-300"
+          href="enroll.html"
+        >
+          Enroll <i class="fa-solid fa-arrow-right"></i>
+        </a>
+        <div class="hidden sm:block w-[45%] h-[40px] relative content-center">
+          <input
+            type="text"
+            placeholder="Search Courses"
+            class="pl-10 pr-4 py-2 bg-[#eaedf0] border-[#eaedf0] dark:bg-variant-text-black dark:text-gray-400 text-variant-text-black rounded-[10px] w-full focus:outline-none"
+          />
+          <i
+            class="fa-solid fa-magnifying-glass absolute left-3 top-1/2 -translate-y-1/2 text-gray-400"
+          ></i>
+        </div>
+        <div class="flex items-center">
+          <a
+            class="hidden dark:hover:bg-variant-primary mx-[5px] dark:text-white sm:flex justify-center items-center text-[13px] px-1 hover:bg-variant-secondary-primary duration-300 text-center hover:text-white rounded-[10px] h-[40px]"
+            href="teach.html"
+            >Teach on learnfinity</a
+          >
+          <a
+            class="dark:bg-variant-text-black dark:text-white hidden sm:flex items-center justify-center text-[13px] mx-[5px] w-[70px] h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary border border-primary rounded-[10px]"
+            href="login.html"
+            >Log in</a
+          >
+
+          <a
+            class="hidden sm:flex items-center justify-center text-[13px] mx-[5px] w-[70px] h-[35px] bg-primary hover:bg-variant-primary duration-300 text-white border border-primary rounded-[10px]"
+            href="signup.html"
+          >
+            Sign up
+          </a>
+          <!-- search -->
+          <button
+            onclick="toggleSearch()"
+            id="responsive-search"
+            class="dark:bg-dark-bg dark:text-white cursor-pointer sm:hidden block mx-2 sm:w-[50px] sm:ml-[5px] sm:h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary border-primary rounded-[10px]"
+          >
+            <i class="fa-solid fa-magnifying-glass text-gray-"></i>
+          </button>
+          <button
+            class="dark:bg-variant-text-black dark:text-white hidden sm:block w-[50px] ml-[5px] h-[35px] bg-white hover:bg-primary hover:text-white duration-300 text-primary sm:border border-primary rounded-[10px]"
+          >
+            <i class="fa-solid fa-earth-americas"></i>
+          </button>
+        </div>
+
+        <!-- sidebar -->
+        <div
+          id="mobile-sidebar"
+          class="sm:hidden fixed top-0 left-[-280px] h-full w-64 bg-white dark:bg-dark-bg shadow-lg z-40 duration-300"
+        >
+          <div
+            class="p-4 border-b border-gray-200 flex justify-between items-center"
+          >
+            <img
+              src="../img/learnfinity.png"
+              alt="Logo"
+              class="w-14 rounded-xl"
+            />
+            <button
+              onclick="toggleCloseSidebar()"
+              class="text-primary text-xl dark:text-white"
+            >
+              <i class="fa-solid fa-xmark"></i>
+            </button>
+          </div>
+          <nav class="flex flex-col p-4 gap-4 text-[15px]">
+            <a
+              href="index.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Home</a
+            >
+            <a
+              href="teach.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Teach on Learnfinity</a
+            >
+            <a
+              href="enroll.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Enroll</a
+            >
+            <a
+              href="login.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Log In</a
+            >
+            <a
+              href="signup.html"
+              class="dark:text-white text-primary hover:text-blue-700"
+              >Sign Up</a
+            >
+            <button
+              class="w-full flex items-center justify-center gap-2 py-2 border border-primary rounded-[10px] text-primary hover:bg-primary hover:text-white duration-200"
+            >
+              <i class="fa-solid fa-earth-americas"></i> Language
+            </button>
+          </nav>
+        </div>
+      </nav>
+    </header>
+
+    <!------------------------------------------ Main Section ----------------------------------------------->
+    <main
+      class="flex flex-col lg:flex-row items-center justify-between px-6 py-12 max-w-6xl mx-auto h-screen"
+    >
+      <!-- Image -->
+      <div class="max-w-lg mb-12 lg:mb-0">
+        <img
+          src="../img/Login.png"
+          alt="Login-Image"
+          class="w-full hidden sm:block"
+        />
+      </div>
+      <!-- LoginForm -->
+      <div class="w-full max-w-lg p-8">
+        <h2
+          class="text-black dark:text-white text-2xl lg:text-4xl font-kt font-bold mb-7 flex text-center"
+        >
+          Log in to continue your learning journey
+        </h2>
+        <input
+          type="email"
+          id="email"
+          placeholder="Email"
+          class="text-black dark:text-white font-kt font-semibold w-full px-4 py-5 border-2 border-primary rounded-[10px] mb-7"
+          required
+        />
+        <button
+          type="submit"
+          class="w-full bg-primary text-white font-medium font-kt py-4 rounded-[10px] mb-7 hover:bg-variant-secondary-primary transition duration-500"
+        >
+          Continue with email
+        </button>
+        <!--OtherLogin-->
+        <div class="flex justify-center items-center gap-1 mb-8">
+          <div class="cssline"></div>
+          <p
+            class="text-center text-sm font-kt font-medium text-variant-text-black"
+          >
+            Other login in options
+          </p>
+          <div class="cssline"></div>
+        </div>
+        <!----------Icon------------>
+        <div class="flex justify-center space-x-6 mb-8">
+          <!--GoogleICon-->
+          <a href="#" title="#">
+            <i class="fa-brands fa-google text-3xl"></i
+          ></a>
+          <!--FacebookIcon-->
+          <a href="#" title="#">
+            <i class="fa-brands fa-facebook text-3xl"></i
+          ></a>
+          <!--FacebookIcon-->
+          <a href="#" title="#"
+            ><i class="fa-brands fa-linkedin text-3xl"></i
+          ></a>
+        </div>
+        <!-----Don't have an account?------>
+        <div class="flex justify-center items-center gap-1 mb-8">
+          <div class="cssline"></div>
+          <p
+            class="text-center font-kt text-sm font-medium text-variant-text-black"
+          >
+            Don’t have an account?
+            <a
+              href="signup.html"
+              class="text-primary underline font-kt font-semibold"
+              >Sign Up</a
+            >
+          </p>
+          <div class="cssline"></div>
+        </div>
+      </div>
+    </main>
+    <footer class="text-white py-5 pt-10 px-4 bg-primary dark:dark:bg-dark-bg">
+      <div
+        class="max-w-6xl items-start mx-auto flex flex-col md:flex-row justify-between items-center gap-6 sm:container"
+      >
+        <!-- Logo -->
+        <div class="flex-shrink-0">
+          <img
+            src="../img/learnfinity.png"
+            alt="Learnfinity Logo"
+            class="w-20 sm:w-28 rounded-[50%] mt-5"
+          />
+        </div>
+
+        <address class="not-italic text-sm leading-relaxed">
+          <h2 class="text-lg font-kt mb-2 underline font-bold">Contact</h2>
+          <p>
+            No. 24, Street 562,<br />
+            Sangkat Boeung Kak I,<br />
+            Khan Toul Kork, Phnom Penh, Cambodia
+          </p>
+          <p class="mt-2">
+            <i class="fa-solid fa-phone"></i>
+            <a href="tel:+855919191919" class="hover:underline"
+              >+855 91 919 1919</a
+            >
+          </p>
+          <p>
+            <i class="fa-solid fa-envelopes-bulk"></i>
+            <a href="mailto:learnfinity@gmail.com" class="hover:underline"
+              >learnfinity@gmail.com</a
+            >
+          </p>
+        </address>
+
+        <nav aria-label="Discover">
+          <h2 class="text-lg font-bold mb-2 underline">Discover</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Get the app</a></li>
+            <li>
+              <a href="#" class="hover:underline">Teach On LeanFinity</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Plans And Pricing</a>
+            </li>
+            <li><a href="#" class="hover:underline">Affiliate</a></li>
+            <li><a href="#" class="hover:underline">Help and Supports</a></li>
+          </ul>
+        </nav>
+
+        <nav aria-label="Program">
+          <h2 class="text-lg font-bold mb-2 underline">Program</h2>
+          <ul class="space-y-1 text-sm">
+            <li><a href="#" class="hover:underline">Diploma Degree</a></li>
+            <li>
+              <a href="#" class="hover:underline">BS Degree</a>
+            </li>
+            <li>
+              <a href="#" class="hover:underline">Beginner</a>
+            </li>
+            <li><a href="#" class="hover:underline">Intermediate</a></li>
+            <li><a href="#" class="hover:underline">Difficulty</a></li>
+          </ul>
+        </nav>
+      </div>
+      <hr class="mt-10" />
+      <p class="text-center font-kt mt-5">@2025 LearnFinity</p>
+    </footer>
+    <script
+      src="https://kit.fontawesome.com/d9a2442d2e.js"
+      crossorigin="anonymous"
+    ></script>
+    <script src="../js/script.js"></script>
+    <!--EndMain-->
+  </body>
+</html>
