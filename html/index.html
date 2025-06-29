@@ -7,7 +7,7 @@
 
     <title>Document</title>
   </head>
-  <body class="dark:bg-dark-background">
+  <body class="bg-background dark:bg-dark-background ">
     <!-- Search Responsive -->
     <div
       id="bgOver"
@@ -168,10 +168,319 @@
       </nav>
     </header>
 
-    <main>
-      <p class="text-primary font-kt">This text should be blue</p>
+     <main >
+    <section class="px-3 sm:px-0 relative w-full h-[85vh] font-kt flex">
+  <!-- Background Image -->
+  <div class="absolute inset-0 bg-[url('/img/img1.png')] bg-cover bg-center z-0"></div>
 
-      <p​​ class="font-kt text-6xl text-primary">ហាយ​ប្រូ</p​​>
+  <!-- Black Overlay -->
+  <div class="absolute inset-0 bg-black opacity-70 sm:opacity-60 z-10"></div>
+
+  <!-- Text Content -->
+  <div class="relative z-20 container m-auto  text-center sm:text-left text-white text-shadow-md">
+    <h1 class="text-4xl font-bold">
+      <div>Get <span class="text-secondary-primary">3500+</span></div>
+      <div class="mt-4">Best Online Courses</div>
+      <div class="mt-4">From Learn<span class="text-variant-primary">Finity</span></div>
+    </h1>
+    <p class="mt-4 text-2xl ">
+      Get the skills and real-world experience employers <br />
+      want with Career Accelerators.
+    </p>
+   <br>
+    <a  class="bg-primary duration-300 text-white text-2xl rounded-[10px] py-4 px-8  hover:bg-variant-secondary-primary" href="enroll.html">
+      Find Courses <span class="relative top-0.5">➜</span>
+
+    </a>
+  </div>
+</section >
+
+
+      <!-- second sestion -->
+       <section class="px-3 sm:px-0 container mx-auto" >
+        <!-- major main container -->
+          <div class="mt-8">
+            <h1 class="text-4xl font-bold text-primary text-center underline dark:text-gray-300">Courses Categories</h1>
+          <!-- sub major conatiner -->
+          <div class=" grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-2 py-12 ">
+            <!-- major1 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 dark:hover:bg-dark-bg rounded-[10px]  py-6 px-3 text-2xl text-secondary-primary bg-primary hover:bg-variant-primary  transition-transform duration-500 hover:scale-y-110 ">
+              <div class="text-white text-center"><i class="fa-solid fa-globe"></i></div>
+              <h1 class="text-center ">Web <br>Development</h1>
+            </div>
+            <!-- major2 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 dark:hover:bg-dark-bg py-6 px-3  text-2xl text-secondary-primary bg-primary hover:bg-variant-primary transition-transform duration-500 hover:scale-y-110 rounded-[10px]">
+              <div class="text-white text-center"><i class="fa-solid fa-photo-film"></i></i></div>
+              <h1 class="text-center ">Media <br>Courses</h1>
+            </div>
+            <!-- major3 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 dark:hover:bg-dark-bg py-6 px-3  text-2xl text-secondary-primary bg-primary hover:bg-variant-primary transition-transform duration-500 hover:scale-y-110 rounded-[10px]">
+              <div class="text-white text-center "><i class="fa-solid fa-database"></i></i></div>
+              <h1 class="text-center ">Data <br>Science</h1>
+            </div>
+            <!-- major4 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 dark:hover:bg-dark-bg py-6 px-3  text-2xl text-secondary-primary bg-primary hover:bg-variant-primary transition-transform duration-500 hover:scale-y-110 rounded-[10px]">
+              <div class="text-white text-center"><i class="fa-solid fa-paintbrush"></i></i></div>
+              <h1 class="text-center">Graphic <br>Design</h1>
+            </div>
+          </div>
+
+        <!-- card-container -->
+         <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2 py-10  ">
+          <!-- card-1 -->
+           <div class="dark:bg-dark-card dark:text-gray-300  bg-white rounded-[10px] overflow-hidden shadow-lg">
+            <!-- image -->
+            <img class="w-full  object-cover "  src="/img/guide.jpg" alt="">
+            <!-- content -->
+            <div class="py-4 px-3">
+              <!-- title-->
+              <div>
+                <h2 class="line-clamp-2 text-xl underline font-bold">The Complete AI Guide: Generative AI, Prompt Engineering, and Real-World Applications</h2>
+                <p class="text-variant-text-black">Julian Melanson, Benza Maman, Leap Year</p>
+              </div>
+              <!-- rating -->
+               <div class="text-secondary-primary mt-2">4.6
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-variant-text-black"> (49,358) </span>
+              </div>
+              <!-- price -->
+               <div class="flex items-center gap-x-2 my-5">
+                <h3 class="text-2xl font-bold ">$24.99</h3>
+                <span class="line-through text-variant-text-black text-base">$30.00</span>
+               </div>
+              <!-- button -->
+              <button class="bg-primary hover:bg-variant-secondary-primary text-white rounded-[10px] py-2 px-8 mb-2 duration-300">Best Seller</button>
+           </div>
+           </div>
+
+           <!-- card-2 -->
+           <div class="dark:bg-dark-card dark:text-gray-300  bg-white rounded-[10px] overflow-hidden shadow-lg">
+            <!-- image -->
+            <img class="w-full  object-cover "  src="/img/assistantss.webp" alt="">
+            <!-- content -->
+            <div class="py-4 px-3">
+              <!-- title-->
+              <div>
+                <h2 class="line-clamp-2 text-xl underline font-bold">ChatGPT, DeepSeek, Grok, and 30+ AI marketing assistants to boost content, automate tasks, and grow your brand faster.</h2>
+                <p class="line-clamp-1 text-variant-text-black">Anton Voroniuk, Anton Voroniuk Support, Eugene Voroniuk</p>
+              </div>
+              <!-- rating -->
+               <div class="text-secondary-primary mt-2">4.5
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-variant-text-black"> (699) </span>
+              </div>
+              <!-- price -->
+               <div class="flex items-center gap-x-2 my-5">
+                <h3 class="text-2xl font-bold ">$27.99</h3>
+                <span class="line-through text-variant-text-black text-base">$32.00</span>
+               </div>
+              <!-- button -->
+              <button class="duration-300 bg-primary hover:bg-variant-secondary-primary text-white rounded-[10px] py-2 px-8 mb-2">Best Seller</button>
+           </div>
+           </div>
+
+           <!-- card-3 -->
+           <div class="dark:bg-dark-card dark:text-gray-300  bg-white rounded-[10px] overflow-hidden shadow-lg">
+            <!-- image -->
+            <img class="w-full  object-cover "  src="/img/upgrade.webp" alt="">
+            <!-- content -->
+            <div class="py-4 px-3">
+              <!-- title-->
+              <div>
+                <h2 class="line-clamp-2 text-xl underline font-bold">Upgrade your social media presence with ChatGPT and 30+ AI tools for content, captions, and engagement that convert.</h2>
+                <p class="text-variant-text-black">Anton Voroniuk, Anton Voroniuk Support</p>
+              </div>
+              <!-- rating -->
+               <div class="text-secondary-primary mt-2">4.3
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star"></i>
+                <i class="fa-solid fa-star-half-stroke"></i>
+                <span class="text-variant-text-black"> (327) </span>
+              </div>
+              <!-- price -->
+               <div class="flex items-center gap-x-2 my-5">
+                <h3 class="text-2xl font-bold ">$28.99</h3>
+                <span class="line-through text-variant-text-black text-base">$33.00</span>
+               </div>
+              <!-- button -->
+              <button class="duration-300 bg-primary hover:bg-variant-secondary-primary text-white rounded-[10px] py-2 px-8 mb-2">Best Seller</button>
+           </div>
+           </div>
+          </div>
+          
+        </div>
+       </section>
+
+      <!-- third section -->
+       <section class="px-3 sm:px-0 container mx-auto">
+        <!-- container -->
+        <div>
+          <!-- title -->
+          <div class="mt-6">
+            <h1 class="text-3xl font-bold text-primary text-left underline dark:text-gray-300">Accelerate growth — for you or your organization</h1>
+            <p class="text-variant-text-black pt-3 dark:text-gray-300" >Reach goals faster with one of our plans or programs. Try one free today or contact sales to learn more.</p>
+          </div>
+          <!-- card container-->
+           <div class=" grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2 py-10  ">
+            <!-- card1 -->
+            <div class=" dark:bg-dark-card dark:text-gray-300 bg-white rounded-lg shadow overflow-hidden pb-15">
+              <!-- yellow line-->
+                <div class="w-full h-2 bg-secondary-primary"></div>
+              <!-- gray bg-->
+                <div class="bg-background p-3 dark:bg-dark-card dark:text-gray-300  ">
+                  <h1 class="text-xl font-medium">Personal Plan</h1>
+                  <p class="text-variant-text-black text-sm">For you</p>
+                  <i class="fa-solid fa-user text-primary pt-3"></i><span class="pl-3 text-primary">Individual</span>
+                </div>
+              <!-- content -->
+                <div class="p-4">
+                  <h2 class="text-xl font-medium underline">Start at 10.00$/months</h2>
+                  <p class="text-variant-text-black mt-2 text-sm">Billed monthly or annually. Cancel </p>
+                  <button class="duration-300 block mx-auto bg-secondary-primary hover:bg-variant-secondary-primary text-white rounded-[10px] w-full mt-5 py-2 px-8 text-center">Try it free<span class="relative top-0.5">➜</span></button>
+                </div>
+                <!-- list -->
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Access to 26,000+ top courses</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Certification prep</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Goal-focused recommendations</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>AI-powered coding exercises</span>
+                </div>
+              </div>
+
+              <!-- card2 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 bg-white rounded-lg shadow overflow-hidden pb-15">
+              <!-- yellow line-->
+                <div class="w-full h-2 bg-secondary-primary"></div>
+              <!-- gray bg-->
+                <div class="bg-background p-3 dark:bg-dark-card dark:text-gray-300">
+                  <h1 class="text-xl font-medium">Team Plan</h1>
+                  <p class="text-variant-text-black text-sm">For your team</p>
+                  <i class="fa-solid fa-users text-primary pt-3"></i><span class="pl-3 text-primary">2 to 20 people</span>
+                </div>
+              <!-- content -->
+                <div class="p-4">
+                  <h2 class="text-xl font-medium underline">Start at 120.00$/months</h2>
+                  <p class="text-variant-text-black mt-2 text-sm">Billed monthly or annually. Cancel </p>
+                  <button class="duration-300 block mx-auto bg-secondary-primary hover:bg-variant-secondary-primary text-white rounded-[10px] w-full mt-5 py-2 px-8 text-center">Try it free<span class="relative top-0.5">➜</span></button>
+                </div>
+                <!-- list -->
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Access to 26,000+ top courses</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Certification prep</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Goal-focused recommendations</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>AI-powered coding exercises</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Analytics and adoption reports</span>
+                </div>
+              </div>
+
+              <!-- card3 -->
+            <div class="dark:bg-dark-card dark:text-gray-300 bg-white rounded-lg shadow overflow-hidden pb-15">
+              <!-- yellow line-->
+                <div class="w-full h-2 bg-secondary-primary"></div>
+              <!-- gray bg-->
+                <div class="bg-background p-3 dark:bg-dark-card dark:text-gray-300 ">
+                  <h1 class="text-xl font-medium">Personal Plan</h1>
+                  <p class="text-variant-text-black text-sm">For you</p>
+                  <i class="fa-solid fa-user text-primary pt-3"></i><span class="pl-3 text-primary">Individual</span>
+                </div>
+              <!-- content -->
+                <div class="p-4 ">
+                  <h2 class=" text-xl font-medium underline">Start at 10.00$/months</h2>
+                  <p class="text-variant-text-black mt-2 text-sm">Billed monthly or annually. Cancel </p>
+                  <button class="duration-300 block mx-auto bg-secondary-primary hover:bg-variant-secondary-primary text-white rounded-[10px] w-full mt-5 py-2 px-8 text-center">Try it free<span class="relative top-0.5">➜</span></button>
+                </div>
+                <!-- list -->
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Access to 26,000+ top courses</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Certification prep</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Goal-focused recommendations</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>AI-powered coding exercises</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Dedicated customer success team</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Advanced analytics and insights</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>International course collection featuring </span><span class="block pl-12">15 languages</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Customizable content</span>
+                </div>
+                <div >
+                  <i class="fa-solid fa-circle-check py-2 px-4 text-primary"></i><span>Hands-on tech training with add-on</span>
+                </div>
+              </div>
+
+            </div>
+           </div>
+       </section>
+      
+      <!-- fourth section -->
+       <section class="px-3 sm:px-0 container mx-auto">
+      <!-- container -->
+        <div>
+          <!-- title -->
+           <h1 class="text-3xl font-bold text-primary text-left underline mb-12 dark:text-gray-300">WHAT OUR STUDENTS SAY</h1>
+           <!-- card -->
+            <div class="grid grid-cols-1 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-3 gap-2 py-10">
+              <!-- card1 -->
+               <div class="dark:bg-dark-card dark:text-gray-300 relative bg-white rounded-lg shadow pt-12 text-center px-10 pb-15">
+                  <img class="w-24 h-24 rounded-full object-cover mx-auto absolute top-[-3rem] left-1/2 transform -translate-x-1/2"  src="/img/girl.jpg" alt="Nich">
+                  <h2 class="mt-2 text-2xl font-semibold ">Neary Korea</h2>
+                  <h3 class="text-secondary-primary underline text-xl pt-2 ">Data Science</h3>
+                  <p class="pt-4">“ Not sure where to begin? Start strong with our most recommended <br> courses: <br>Data Science for smart decision-making, <br>Web Development to build the internet, and <br> Video Editing to bring stories to life. “</p>
+               </div>
+
+               <!-- card2 -->
+               <div class="dark:bg-dark-card dark:text-gray-300 relative bg-white rounded-lg shadow pt-12 text-center px-10 pb-15">
+                  <img class="w-24 h-24 rounded-full object-cover mx-auto absolute top-[-3rem] left-1/2 transform -translate-x-1/2"  src="/img/boy.jpg" alt="#">
+                  <h2 class="mt-2 text-2xl font-semibold">Boros Korea</h2>
+                  <h3 class="text-secondary-primary underline text-xl pt-2">Data Science</h3>
+                  <p class="pt-4" >“ Looking to future-proof your skills? <br> We highly recommend starting with <br>Data Science, Web Development, or <br>Video Editing — three of today’s <br>most in-demand fields. “</p>
+               </div>
+
+               <!-- card3 -->
+               <div class="dark:bg-dark-card dark:text-gray-300 relative bg-white rounded-lg shadow pt-12 text-center px-10 pb-15">
+                  <img class="w-24 h-24 rounded-full object-cover mx-auto absolute top-[-3rem] left-1/2 transform -translate-x-1/2"  src="/img/luki.png" alt="#">
+                  <h2 class="mt-2 text-2xl font-semibold ">Loki Laufeyson</h2>
+                  <h3 class="text-secondary-primary underline text-xl pt-2">Video Editing</h3>
+                  <p class="pt-4" >“ Want skills that open doors? We <br> recommend diving into Web <br> Development, mastering Data <br>Science, or exploring your creativity <br> through Video Editing — all available <br> on LearnFinity. “</p>
+               </div>
+            </div>
+        </div>
+       </section>
     </main>
     <footer class="text-white py-5 pt-10 px-4 bg-primary dark:dark:bg-dark-bg">
       <div
