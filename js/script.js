@@ -6,10 +6,10 @@ function toggleSidebar() {
   bgBlack.style.display = "block";
 }
 
-function toggleCloseSidebar() {
-  sidebar.style.left = "-280px";
-  bgBlack.style.display = "none";
-}
+// function toggleCloseSidebar() {
+//   sidebar.style.left = "-280px";
+//   bgBlack.style.display = "none";
+// }
 function toggleSearch() {
   searchIconResponsive.style.display = "block";
 }
@@ -18,3 +18,8 @@ function closeBgOpa() {
   bgBlack.style.display = "none";
   sidebar.style.left = "-280px";
 }
+function toggleCloseSidebar() {
+  const sidebar = document.getElementById('mobile-sidebar');
+  sidebar.style.left = '-280px';
+}
+
