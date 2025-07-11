@@ -701,6 +701,9 @@
   .bg-\[url\(\'\.\/img\/img1\.png\'\)\] {
     background-image: url('./img/img1.png');
   }
+  .bg-\[url\(\'\.\/img1\.png\'\)\] {
+    background-image: url('./img1.png');
+  }
   .bg-\[url\(\'\/\'\)\] {
     background-image: url('/');
   }
