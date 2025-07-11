@@ -698,6 +698,9 @@
   .bg-\[url\(\'\.\/\'\)\] {
     background-image: url('./');
   }
+  .bg-\[url\(\'\.\/img\/img1\.png\'\)\] {
+    background-image: url('./img/img1.png');
+  }
   .bg-\[url\(\'\/\'\)\] {
     background-image: url('/');
   }
@@ -734,6 +737,9 @@
   .bg-\[url\(\'\/img1\/\'\)\] {
     background-image: url('/img1/');
   }
+  .bg-\[url\(\'i\/mg\/img1\.png\'\)\] {
+    background-image: url('i/mg/img1.png');
+  }
   .bg-\[url\(\'im\'\)\] {
     background-image: url('im');
   }
@@ -742,6 +748,9 @@
   }
   .bg-\[url\(\'img1\'\)\] {
     background-image: url('img1');
+  }
+  .bg-\[url\(\'img1\.png\'\)\] {
+    background-image: url('img1.png');
   }
   .bg-contain {
     background-size: contain;
