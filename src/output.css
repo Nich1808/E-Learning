@@ -689,14 +689,41 @@
   .bg-white {
     background-color: var(--color-white);
   }
+  .bg-\[image\(\'\.\/img\/img1\.png\'\)\] {
+    background-image: image('./img/img1.png');
+  }
+  .bg-\[image\:\(\'\.\/img\/img1\.png\'\)\] {
+    background-image: ('./img/img1.png');
+  }
   .bg-\[url\(\'\'\)\] {
     background-image: url('');
   }
   .bg-\[url\(\'\.\'\)\] {
     background-image: url('.');
   }
+  .bg-\[url\(\'\.\.\/\'\)\] {
+    background-image: url('../');
+  }
+  .bg-\[url\(\'\.\.\/im\'\)\] {
+    background-image: url('../im');
+  }
+  .bg-\[url\(\'\.\.\/img\'\)\] {
+    background-image: url('../img');
+  }
   .bg-\[url\(\'\.\/\'\)\] {
     background-image: url('./');
+  }
+  .bg-\[url\(\'\.\/img\'\)\] {
+    background-image: url('./img');
+  }
+  .bg-\[url\(\'\.\/img\/\'\)\] {
+    background-image: url('./img/');
+  }
+  .bg-\[url\(\'\.\/img\/img\'\)\] {
+    background-image: url('./img/img');
+  }
+  .bg-\[url\(\'\.\/img\/img1\'\)\] {
+    background-image: url('./img/img1');
   }
   .bg-\[url\(\'\.\/img\/img1\.png\'\)\] {
     background-image: url('./img/img1.png');
@@ -754,6 +781,27 @@
   }
   .bg-\[url\(\'img1\.png\'\)\] {
     background-image: url('img1.png');
+  }
+  .bg-\[url\(\'។។\'\)\] {
+    background-image: url('។។');
+  }
+  .bg-\[url\(\.\.\/img\/img1\.png\)\] {
+    background-image: url(../img/img1.png);
+  }
+  .bg-\[url\(\.\/img\/img1\.png\)\] {
+    background-image: url(./img/img1.png);
+  }
+  .bg-\[url\(\/img\/\.jpg\)\] {
+    background-image: url(/img/.jpg);
+  }
+  .bg-\[url\(\/img\/img1\.jpg\)\] {
+    background-image: url(/img/img1.jpg);
+  }
+  .bg-\[url\(\/img\/img1\.png\)\] {
+    background-image: url(/img/img1.png);
+  }
+  .bg-\[url\(\/img\/mountains\.jpg\)\] {
+    background-image: url(/img/mountains.jpg);
   }
   .bg-contain {
     background-size: contain;
